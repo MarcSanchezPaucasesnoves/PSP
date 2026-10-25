@@ -17,20 +17,20 @@ public class App {
         // tac.start();
         
         // Exercici 3
-        Thread inc1 = new Thread(new Incrementador());
-        Thread inc2 = new Thread(new Incrementador());
+        // Thread inc1 = new Thread(new Incrementador());
+        // Thread inc2 = new Thread(new Incrementador());
 
-        inc1.start();
-        inc2.start();
+        // inc1.start();
+        // inc2.start();
 
-        try {
-            inc1.join();
-            inc2.join();
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
+        // try {
+        //     inc1.join();
+        //     inc2.join();
+        // } catch (InterruptedException e) {
+        //     System.out.println(e.getMessage());
+        // }
         
-        System.out.println(nombre);
+        // System.out.println(nombre);
 
 
         // Exercici 4
