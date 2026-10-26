@@ -34,6 +34,20 @@ public class App {
 
 
         // Exercici 4
-        
+        Thread inc1 = new Thread(new Incrementador2());
+        Thread inc2 = new Thread(new Incrementador2());
+
+        inc1.start();
+        inc2.start();
+
+        try {
+            inc1.join();
+            inc2.join();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        IO.println(nombre);
     }
 }
