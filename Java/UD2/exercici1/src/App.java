@@ -34,20 +34,44 @@ public class App {
 
 
         // Exercici 4
-        Thread inc1 = new Thread(new Incrementador2());
-        Thread inc2 = new Thread(new Incrementador2());
+        // Thread inc1 = new Thread(new Incrementador2());
+        // Thread inc2 = new Thread(new Incrementador2());
 
-        inc1.start();
-        inc2.start();
+        // inc1.start();
+        // inc2.start();
+
+        // try {
+        //     inc1.join();
+        //     inc2.join();
+
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+
+        // IO.println(nombre);
+
+        // Exercici 5
+        Thread inc = new Thread(new Incrementador4());
+        Thread dec = new Thread(new Decrementador4());
+
+        inc.start();
+        dec.start();
 
         try {
-            inc1.join();
-            inc2.join();
+            inc.join();
+            dec.join();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         IO.println(nombre);
+    }
+
+    public static synchronized void operacio(int operacio) {
+        if (operacio == 1) {
+            nombre++;
+        } else if (operacio == 2) {
+            nombre--;
+        }
     }
 }
