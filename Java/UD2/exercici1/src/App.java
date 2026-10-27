@@ -51,20 +51,33 @@ public class App {
         // IO.println(nombre);
 
         // Exercici 5
-        Thread inc = new Thread(new Incrementador4());
-        Thread dec = new Thread(new Decrementador4());
+        // Thread inc = new Thread(new Incrementador4());
+        // Thread dec = new Thread(new Decrementador4());
 
-        inc.start();
-        dec.start();
+        // inc.start();
+        // dec.start();
 
-        try {
-            inc.join();
-            dec.join();
+        // try {
+        //     inc.join();
+        //     dec.join();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+        // IO.println(nombre);
+
+
+        // Exercici 6
+        BufferEx6 pila = new BufferEx6(5);
+        for (int i = 0; i<50; i++){
+                    Thread productor = new Thread(new ProductorEx6(pila));
+                    Thread consumidor = new Thread(new ConsumidorEx6(pila));
+                    //Thread consumidor2 = new Thread(new ConsumidorEx6(pila));
+                    productor.start();
+                    consumidor.start();
+                    //consumidor2.start();
         }
-        IO.println(nombre);
+
     }
 
     public static synchronized void operacio(int operacio) {
