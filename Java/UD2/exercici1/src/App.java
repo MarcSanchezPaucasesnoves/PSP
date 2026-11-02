@@ -68,15 +68,19 @@ public class App {
 
 
         // Exercici 6
-        BufferEx6 pila = new BufferEx6(5);
-        for (int i = 0; i<50; i++){
-                    Thread productor = new Thread(new ProductorEx6(pila));
-                    Thread consumidor = new Thread(new ConsumidorEx6(pila));
-                    //Thread consumidor2 = new Thread(new ConsumidorEx6(pila));
-                    productor.start();
-                    consumidor.start();
-                    //consumidor2.start();
-        }
+        // BufferEx6 pila = new BufferEx6(5);
+        // for (int i = 0; i<50; i++){
+        //     Thread productor = new Thread(new ProductorEx6(pila));
+        //     Thread consumidor = new Thread(new ConsumidorEx6(pila));
+        //     //Thread consumidor2 = new Thread(new ConsumidorEx6(pila));
+        //     productor.start();
+        //     consumidor.start();
+        //     //consumidor2.start();
+        // }
+
+
+        // Exercici 7
+        
 
     }
 
