@@ -84,26 +84,41 @@ public class App {
 
 
         // Exercici 8
-        CubertEx8 cubert1 = new CubertEx8();
-        CubertEx8 cubert2 = new CubertEx8();
-        CubertEx8 cubert3 = new CubertEx8();
-        CubertEx8 cubert4 = new CubertEx8();
-        CubertEx8 cubert5 = new CubertEx8();
-        Thread filosof1 = new Thread(new FilosofEx8("1", cubert1, cubert5));
-        Thread filosof2 = new Thread(new FilosofEx8("2", cubert1, cubert2));
-        Thread filosof3 = new Thread(new FilosofEx8("3", cubert3, cubert2));
-        Thread filosof4 = new Thread(new FilosofEx8("4", cubert3, cubert4));
-        Thread filosof5 = new Thread(new FilosofEx8("5", cubert5, cubert4));
-        filosof1.start();
-        filosof2.start();
-        filosof3.start();
-        filosof4.start();
-        filosof5.start();
+        // CubertEx8 cubert1 = new CubertEx8();
+        // CubertEx8 cubert2 = new CubertEx8();
+        // CubertEx8 cubert3 = new CubertEx8();
+        // CubertEx8 cubert4 = new CubertEx8();
+        // CubertEx8 cubert5 = new CubertEx8();
+        // Thread filosof1 = new Thread(new FilosofEx8("1", cubert1, cubert5));
+        // Thread filosof2 = new Thread(new FilosofEx8("2", cubert1, cubert2));
+        // Thread filosof3 = new Thread(new FilosofEx8("3", cubert3, cubert2));
+        // Thread filosof4 = new Thread(new FilosofEx8("4", cubert3, cubert4));
+        // Thread filosof5 = new Thread(new FilosofEx8("5", cubert5, cubert4));
+        // filosof1.start();
+        // filosof2.start();
+        // filosof3.start();
+        // filosof4.start();
+        // filosof5.start();
 
         
 
         // Exercici 9
         
+
+        // Exerici 10
+        
+        Thread inc1 = new Thread(new Incrementador());
+        Thread inc2 = new Thread(new Incrementador());
+
+        inc1.start();
+        inc2.start();
+
+        try {
+            inc1.join();
+            inc2.join();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
