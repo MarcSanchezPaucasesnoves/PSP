@@ -24,7 +24,7 @@ public class BddEx10{
     }
 
     synchronized public void escriureFitxer(String nomFil, long tempsTardat) {
-
+        IO.println("El modul " + nomFil + " ha tardat: " + tempsTardat);
     }
     
 }

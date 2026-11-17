@@ -106,16 +106,23 @@ public class App {
         
 
         // Exerici 10
-        
-        Thread inc1 = new Thread(new Incrementador());
-        Thread inc2 = new Thread(new Incrementador());
+        BddEx10 bdd = new BddEx10(2);
+        Thread modul1 = new Thread(new ModulEx10("Modul1", bdd));
+        Thread modul2 = new Thread(new ModulEx10("Modul2", bdd));
+        Thread modul3 = new Thread(new ModulEx10("Modul3", bdd));
+        Thread modul4 = new Thread(new ModulEx10("Modul4", bdd));
 
-        inc1.start();
-        inc2.start();
+
+        modul1.start();
+        modul2.start();
+        modul3.start();
+        modul4.start();
 
         try {
-            inc1.join();
-            inc2.join();
+            modul1.join();
+            modul2.join();
+            modul3.join();
+            modul4.join();
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
