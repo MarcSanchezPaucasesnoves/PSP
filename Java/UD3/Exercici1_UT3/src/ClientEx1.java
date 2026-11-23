@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ClientEx1 {
     public static void main(String[] args) {
-        final String HOST = "127.0.0.1";
+        final String HOST = "localhost";
         final int PORT = 5000;
 
         try (Socket socket = new Socket(HOST, PORT);
@@ -17,13 +17,13 @@ public class ClientEx1 {
                      socket.getOutputStream(), true);
              Scanner teclat = new Scanner(System.in)) {
 
-            System.out.println("Connectat al servidor. Escriu missatges (ADEU per sortir):");
+            System.out.println("Connectat al servidor. Escriu missatges (ADEU per sortir): ");
             String text;
             do {
                 System.out.print("> ");
                 text = teclat.nextLine();
-                sortida.println(text); // Envia al servidor
-                String resposta = entrada.readLine(); // Espera resposta
+                sortida.println(text);
+                String resposta = entrada.readLine();
                 System.out.println("Servidor respon: " + resposta);
             } while (!"ADEU".equalsIgnoreCase(text));
 
