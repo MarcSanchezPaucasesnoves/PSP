@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ClientEx1 {
     public static void main(String[] args) {
         final String HOST = "localhost";
-        final int PORT = 5000;
+        final int PORT = 2222;
 
         try (Socket socket = new Socket(HOST, PORT);
              BufferedReader entrada = new BufferedReader(
